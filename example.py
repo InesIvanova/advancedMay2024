@@ -1,9 +1,16 @@
-from collections import deque
+def calculator(operator):
+    def addition(a, b):
+        return a + b
+    def subtraction(a, b):
+        return a - b
 
 
-queue = deque(["Eric", "John", "Michael"])
+    if operator == "+":
+        return addition
+    elif operator == "-":
+        return subtraction
 
 
-print(queue[1])
 
-
+result = calculator("+")
+print(result(4, 5))

@@ -1,19 +1,7 @@
-a = []
+def some_func(name):
+    print(name)
 
-def a():
-    print("a")
+info = {"name": "test"}
 
-
-def b():
-    print("b")
-
-def c():
-    print("c")
-
-
-def d():
-    a()
-    b()
-    c()
-
-d()
+a = [1, 2]
+print(some_func(**info))
