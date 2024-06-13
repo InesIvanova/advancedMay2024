@@ -1,0 +1,3 @@
+Hello from file!!!
+asd
+from with statement
