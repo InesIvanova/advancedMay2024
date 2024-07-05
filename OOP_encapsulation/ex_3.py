@@ -1,6 +1,3 @@
-class NotValidUsernameError(Exception):
-    pass
-
 class Profile:
     def __init__(self, username: str, password: str):
         self.username = username
@@ -13,7 +10,7 @@ class Profile:
     @username.setter
     def username(self, value):
         if len(value) < 5 or len(value) > 15:
-            value = value + "___"
+            raise ValueError("The username must be between 5 and 15 characters.")
         self.__username = value
 
     @property
@@ -34,12 +31,7 @@ class Profile:
         return f'You have a profile with username: "{self.username}" and password: {"*" * len(self.password)}'
 
 
-password = input()
-while True:
-    try:
-        profile_with_invalid_password = Profile('My', password)
-        break
-    except ValueError as er:
-        print(str(er))
-        input()
-
+# profile_with_invalid_password = Profile('My_username', 'My-password')
+# profile_with_invalid_username = Profile('Too_long_username', 'Any')
+correct_profile = Profile("Username", "Passw0rd")
+print(correct_profile)
