@@ -1,45 +1,67 @@
-class NotValidUsernameError(Exception):
-    pass
+import math
+from abc import ABC, abstractmethod
 
-class Profile:
-    def __init__(self, username: str, password: str):
-        self.username = username
-        self.password = password
 
-    @property
-    def username(self):
-        return self.__username
-
-    @username.setter
-    def username(self, value):
-        if len(value) < 5 or len(value) > 15:
-            value = value + "___"
-        self.__username = value
+class Person(ABC):
+    def __init__(self, name):
+        self.name = name
 
     @property
-    def password(self):
-        return self.__password
+    def name(self):
+        return self.__name
 
-    @password.setter
-    def password(self, value):
-        is_long_enough = len(value) >= 8
-        is_upper_char = len([char for char in value if char.isupper()]) > 0
-        is_digit = len([char for char in value if char.isdigit()]) > 0
+    @name.setter
+    def name(self, value):
+        if len(value) < 2:
+            raise ValueError("Person name must be at least two chars")
+        self.__name = value
 
-        if not is_long_enough or not is_upper_char or not is_digit:
-            raise ValueError("The password must be 8 or more characters with at least 1 digit and 1 uppercase letter.")
-        self.__password = value
+    @abstractmethod
+    def go_to_work(self):
+        pass
 
-    def __str__(self):
-        return f'You have a profile with username: "{self.username}" and password: {"*" * len(self.password)}'
+    def greeting(self):
+        return "Hello"
 
 
-password = input()
-while True:
-    try:
-        profile_with_invalid_password = Profile('My', password)
-        break
-    except ValueError as er:
-        print(str(er))
-        input()
+class Teacher(Person):
+
+    def __init__(self, name, salary):
+        super().__init__(name)
+        self.salary = salary
+
+    @property
+    def name(self):
+        return
+
+    @name.setter
+    def name(self, value):
+        if len(value) < 2 and value.startswith("a"):
+            raise ValueError("Name is invalid")
+
+    @property
+    def salary(self):
+        return self.__salary
+
+    @salary.setter
+    def salary(self, value):
+        if value < 0:
+            raise ValueError("Salary can not be negative")
+        self.__salary = value
+
+    def go_to_work(self):
+        return "Going school"
+
+    def eat(self):
+        return "Eat at school"
+
+    def greeting(self):
+        return "Hello, kids!"
+
+
+
+t = Teacher("aasd", 1000)
+print(t.greeting())
+print(math.pi)
+
 
