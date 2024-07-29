@@ -1,0 +1,10 @@
+say_hi was called
+say_bye was called
+say_hi was called at 2024-07-22 20:29:50.969981
+say_bye was called at 2024-07-22 20:29:50.970611
+say_hi was called at 2024-07-22 20:30:13.996103
+say_bye was called at 2024-07-22 20:30:13.996751
+say_hi was called at 2024-07-22 20:31:21.695527 with arguments ('Peter',) {}
+say_bye was called at 2024-07-22 20:31:21.696070 with arguments ('Peter',) {}
+say_hi was called at 2024-07-22 20:33:17.900125 with arguments ('Peter',) {}
+say_bye was called at 2024-07-22 20:33:17.900783 with arguments ('Peter',) {}

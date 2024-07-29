@@ -1,19 +1,25 @@
-class Engine:
-    def __init__(self, liters, type):
-        self.liters = liters
-        self.type = type
+class Person:
+    def __init__(self, name):
+        self.name = name
+
+    @property
+    def name(self):
+        return self.__name
+
+    @name.setter
+    def name(self, value):
+        if len(value) < 2:
+            raise ValueError()
+        self.__name = value
+
+    def say_name(self):
+        return "Hi"
 
 
-class Car:
-    def __init__(self, model, type, engine):
-        self.model = model
-        self.type = type
-        self.engine = engine
+class Teacher(Person):
+    def say_name(self):
+        raise Exception("not able to say name")
 
 
-engine = Engine(1.3, "Benzin")
-engine2 = Engine(1.6, "Disel TDI")
 
-car = Car("Citroen", "Hetchbag", engine)
-a = 5
 
