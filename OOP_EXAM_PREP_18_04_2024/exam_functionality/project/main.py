@@ -1,11 +1,11 @@
 from project.managing_app import ManagingApp
 
 app = ManagingApp()
-print(app.register_user( 'Tisha', 'Reenie', '7246506' ))
-print(app.register_user( 'Bernard', 'Remy', 'CDYHVSR68661'))
-print(app.register_user( 'Mack', 'Cindi', '7246506'))
+print(app.register_user('Tisha', 'Reenie', '7246506'))
+print(app.register_user('Bernard', 'Remy', 'CDYHVSR68661'))
+print(app.register_user('Mack', 'Cindi', '7246506'))
 print(app.upload_vehicle('PassengerCar', 'Chevrolet', 'Volt', 'CWP8032'))
-print(app.upload_vehicle( 'PassengerCar', 'Volkswagen', 'e-Up!', 'COUN199728'))
+print(app.upload_vehicle('PassengerCar', 'Volkswagen', 'e-Up!', 'COUN199728'))
 print(app.upload_vehicle('PassengerCar', 'Mercedes-Benz', 'EQS', '5UNM315'))
 print(app.upload_vehicle('CargoVan', 'Ford', 'e-Transit', '726QOA'))
 print(app.upload_vehicle('CargoVan', 'BrightDrop', 'Zevo400', 'SC39690'))

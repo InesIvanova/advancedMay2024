@@ -22,7 +22,7 @@ class ManagingApp:
         return len(self.routes) + 1
 
     def register_user(
-        self, first_name: str, last_name: str, driving_license_number: str
+            self, first_name: str, last_name: str, driving_license_number: str
     ):
         try:
             existing_user = [
@@ -39,7 +39,7 @@ class ManagingApp:
             return f"{first_name} {last_name} was successfully registered under DLN-{driving_license_number}"
 
     def upload_vehicle(
-        self, vehicle_type: str, brand: str, model: str, license_plate_number: str
+            self, vehicle_type: str, brand: str, model: str, license_plate_number: str
     ):
         if vehicle_type not in ["PassengerCar", "CargoVan"]:
             return f"Vehicle type {vehicle_type} is inaccessible."
@@ -61,30 +61,29 @@ class ManagingApp:
             r
             for r in self.routes
             if r.start_point == start_point
-            and r.end_point == end_point
-            and r.length > length
+               and r.end_point == end_point
+               and r.length > length
         ]
         if greater_length_routes:
             greater_length_routes[0].is_locked = True
 
-
         routes = [
             r
             for r in self.routes
             if r.start_point == start_point
-            and r.end_point == end_point
-            and r.length == length
+               and r.end_point == end_point
+               and r.length == length
         ]
         if routes:
             return (f"{start_point}/{end_point} - {length} km had already "
-                f"been added to our platform.")
+                    f"been added to our platform.")
 
         routes = [
             r
             for r in self.routes
             if r.start_point == start_point
-            and r.end_point == end_point
-            and r.length < length
+               and r.end_point == end_point
+               and r.length < length
         ]
         if routes:
             return (f"{start_point}/{end_point} shorter route had already "
@@ -95,11 +94,11 @@ class ManagingApp:
         return f"{start_point}/{end_point} - {length} km is unlocked and available to use."
 
     def make_trip(
-        self,
-        driving_license_number: str,
-        license_plate_number: str,
-        route_id: int,
-        is_accident_happened: bool,
+            self,
+            driving_license_number: str,
+            license_plate_number: str,
+            route_id: int,
+            is_accident_happened: bool,
     ):
         user = [
             u for u in self.users if u.driving_license_number == driving_license_number

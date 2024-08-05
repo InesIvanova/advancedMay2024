@@ -19,7 +19,3 @@ class Person:
 class Teacher(Person):
     def say_name(self):
         raise Exception("not able to say name")
-
-
-
-

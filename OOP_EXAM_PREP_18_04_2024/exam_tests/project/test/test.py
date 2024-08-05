@@ -1,5 +1,6 @@
-from project.robot import Robot
 from unittest import TestCase, main
+
+from project.robot import Robot
 
 
 class TestRobot(TestCase):
@@ -24,7 +25,7 @@ class TestRobot(TestCase):
     def test_init_robot_invalid_price_raises(self):
         with self.assertRaises(ValueError) as ex:
             r = Robot("one1", "Education", 50, -2)
-        self.assertEqual(str(ex.exception),"Price cannot be negative!")
+        self.assertEqual(str(ex.exception), "Price cannot be negative!")
 
     def test_upgrade_hardware_is_already_in_the_list(self):
         self.robot.hardware_upgrades.append("Part A")
